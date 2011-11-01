@@ -307,10 +307,10 @@ class AuthHMAC
         def self.included(base)
           base.extend(ClassMethods)
           
-          base.class_inheritable_accessor :hmac_access_id
-          base.class_inheritable_accessor :hmac_secret
-          base.class_inheritable_accessor :use_hmac
-          base.class_inheritable_accessor :hmac_options
+          base.class_attribute :hmac_access_id
+          base.class_attribute :hmac_secret
+          base.class_attribute :use_hmac
+          base.class_attribute :hmac_options
         end
         
         module ClassMethods
