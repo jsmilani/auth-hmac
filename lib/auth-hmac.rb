@@ -292,9 +292,9 @@ class AuthHMAC
       
       if defined?(ActionController::Base)        
         ActionController::Base.class_eval do
-          class_inheritable_accessor :authhmac
-          class_inheritable_accessor :credentials
-          class_inheritable_accessor :authhmac_failure_message
+          class_attribute :authhmac
+          class_attribute :credentials
+          class_attribute :authhmac_failure_message
         end
         
         ActionController::Base.send(:include, ControllerFilter::InstanceMethods)
